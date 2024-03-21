@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 console.log(ctx);
-// CANVAS_WIDTH est une fonction globale
+
 const CANVAS_WIDTH = (canvas.width = 600);
 const CANVAS_HEIGHT = (canvas.height = 600);
 
@@ -13,12 +13,10 @@ let frameX = 0;
 let frameY = 0;
 let gameFrame = 0;
 const staggerFrames = 5;
-// X = Witdh = horizontal ; Y = Height = vertical
 
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  //   ctx.fillRect(100, 50, 100, 100);
-  //   ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+
   ctx.drawImage(
     playerImage,
     frameX * spriteWidth,
@@ -34,7 +32,6 @@ function animate() {
     if (frameX < 6) frameX++;
     else frameX = 0;
   }
-  //   % = more or less = remainder operator, en français le reste
 
   gameFrame++;
   requestAnimationFrame(animate);
